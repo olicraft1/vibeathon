@@ -1,0 +1,9 @@
+fastapi>=0.110
+uvicorn[standard]>=0.29
+google-genai>=1.0
+pydantic>=2.6
+numpy>=1.26
+av>=12.0
+python-dotenv>=1.0
+# Local ASR (offline transcription). Optional but recommended.
+faster-whisper>=1.0

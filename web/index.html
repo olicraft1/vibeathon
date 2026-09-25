@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CharlaViva · subtítulos simultáneos en vivo</title>
+  <link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+  <header>
+    <div class="brand"><span class="logo">🧉</span> CharlaViva
+      <span class="tag" data-i18n="pick_sub" style="display:none"></span>
+    </div>
+    <div class="header-right">
+      <span class="badge" id="conn-badge"><span class="dot"></span> <span id="conn-text">…</span></span>
+      <button data-i18n-toggle id="lang-toggle" title="ES/EN"></button>
+    </div>
+  </header>
+
+  <!-- LOBBY -->
+  <main id="lobby">
+    <h1 data-i18n="pick">Elegí una sesión</h1>
+    <p class="sub" data-i18n="pick_sub"></p>
+    <div class="pill-row" id="engine-pills"></div>
+    <div class="grid" id="session-grid"></div>
+    <div class="empty" id="lobby-empty" hidden data-i18n="waiting"></div>
+  </main>
+
+  <!-- STAGE -->
+  <main id="stage" hidden>
+    <div class="stage-top">
+      <button id="back-btn" data-i18n="back">← Sesiones</button>
+      <h2 id="stage-title"></h2>
+      <span class="badge" id="live-pill"><span class="dot"></span> <span></span></span>
+      <span class="badge" id="latency-pill">—</span>
+    </div>
+    <div class="lang-tabs" id="lang-tabs"></div>
+    <div class="caption-box" id="caption-box">
+      <div class="empty" data-i18n="waiting"></div>
+    </div>
+    <div class="stage-bottom">
+      <button id="mic-btn" class="primary" hidden>🎙️ Usar micrófono</button>
+      <label><input type="checkbox" id="bilingual-toggle" /> <span data-i18n="bilingual"></span></label>
+      <span>·</span>
+      <span data-i18n="export">Exportar</span>:
+      <a id="ex-srt" href="#">SRT</a> · <a id="ex-vtt" href="#">VTT</a> · <a id="ex-txt" href="#">TXT</a>
+    </div>
+  </main>
+
+  <footer>
+    <span>CharlaViva — open source live captions · MIT License</span>
+    <span><a href="/admin">🎛️ producción</a></span>
+  </footer>
+
+  <script src="/static/common.js"></script>
+  <script src="/static/app.js"></script>
+</body>
+</html>

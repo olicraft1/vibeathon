@@ -1,0 +1,18 @@
+services:
+  charlaviva:
+    build: .
+    ports:
+      - "8000:8000"
+    env_file:
+      - .env
+    environment:
+      - HOST=0.0.0.0
+      - PORT=8000
+    volumes:
+      # drop your own talk audio here and reference it from the admin form
+      - ./samples:/app/samples
+      - ./downloads:/app/downloads
+    restart: unless-stopped
+    # To scale out horizontally run several replicas and load-balance by
+    # session id (see docs/DEPLOY.md):
+    #   docker compose up --scale charlaviva=3
