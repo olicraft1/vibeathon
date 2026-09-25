@@ -1,0 +1,119 @@
+{
+  "lang": "en",
+  "duration": 83.8,
+  "note": "Pre-authored captions for the bundled TTS sample (canned engine fallback).",
+  "cues": [
+    {
+      "t0": 0.35,
+      "t1": 5.83,
+      "texts": {
+        "en": "Welcome everyone, and thank you for joining this session at Nerdearla.",
+        "es": "Bienvenidos y gracias por acompañarnos en esta sesión de Nerdearla."
+      }
+    },
+    {
+      "t0": 5.83,
+      "t1": 12.59,
+      "texts": {
+        "en": "My name is Alex, and today we are going to talk about scaling open source communities.",
+        "es": "Mi nombre es Alex, y hoy vamos a hablar de cómo escalar comunidades de open source."
+      }
+    },
+    {
+      "t0": 12.59,
+      "t1": 19.11,
+      "texts": {
+        "en": "Three years ago our project had five contributors and a single deploy script.",
+        "es": "Hace tres años nuestro proyecto tenía cinco colaboradores y un único script de deploy."
+      }
+    },
+    {
+      "t0": 19.11,
+      "t1": 26.38,
+      "texts": {
+        "en": "Today we have more than two thousand contributors, and we ship to production forty times a day.",
+        "es": "Hoy tenemos más de dos mil colaboradores y llevamos a producción cuarenta veces al día."
+      }
+    },
+    {
+      "t0": 26.38,
+      "t1": 28.18,
+      "texts": {
+        "en": "How did we get here?",
+        "es": "¿Cómo llegamos hasta acá?"
+      }
+    },
+    {
+      "t0": 28.18,
+      "t1": 34.7,
+      "texts": {
+        "en": "First, we invested in Kubernetes operators to automate our infrastructure.",
+        "es": "Primero, invertimos en operadores de Kubernetes para automatizar nuestra infraestructura."
+      }
+    },
+    {
+      "t0": 34.7,
+      "t1": 44.1,
+      "texts": {
+        "en": "Second, we built continuous delivery pipelines with GitHub Actions, so every pull request gets tested automatically.",
+        "es": "Segundo, construimos pipelines de entrega continua con GitHub Actions, así cada pull request se prueba automáticamente."
+      }
+    },
+    {
+      "t0": 44.1,
+      "t1": 53.82,
+      "texts": {
+        "en": "And third, we added observability with Prometheus and Grafana, which let us catch regressions before our users did.",
+        "es": "Y tercero, agregamos observabilidad con Prometheus y Grafana, que nos permitió detectar regresiones antes que nuestros usuarios."
+      }
+    },
+    {
+      "t0": 53.82,
+      "t1": 57.18,
+      "texts": {
+        "en": "The secret is not the tools, though.",
+        "es": "El secreto no son las herramientas, sin embargo."
+      }
+    },
+    {
+      "t0": 57.18,
+      "t1": 62.89,
+      "texts": {
+        "en": "The secret is boring, reliable processes and excellent documentation.",
+        "es": "El secreto son procesos aburridos y confiables, y documentación excelente."
+      }
+    },
+    {
+      "t0": 62.89,
+      "t1": 69.69,
+      "texts": {
+        "en": "If a new contributor cannot run the project in ten minutes, you have already lost them.",
+        "es": "Si una persona nueva no puede levantar el proyecto en diez minutos, ya la perdiste."
+      }
+    },
+    {
+      "t0": 69.69,
+      "t1": 76.57,
+      "texts": {
+        "en": "So write a great README, label good first issues, and be kind in code review.",
+        "es": "Así que escribí un gran README, etiquetá buenas primeras issues, y sé amable en el code review."
+      }
+    },
+    {
+      "t0": 76.57,
+      "t1": 82.69,
+      "texts": {
+        "en": "That is how open source scales: with people, patience, and a little bit of YAML.",
+        "es": "Así escala el open source: con personas, paciencia, y un poquito de YAML."
+      }
+    },
+    {
+      "t0": 82.69,
+      "t1": 83.5,
+      "texts": {
+        "en": "Thank you!",
+        "es": "¡Gracias!"
+      }
+    }
+  ]
+}

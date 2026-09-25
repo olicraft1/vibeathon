@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Producción · CharlaViva</title>
+  <link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+  <header>
+    <div class="brand"><span class="logo">🎛️</span> <span data-i18n="admin_title">Producción · CharlaViva</span></div>
+    <div class="header-right">
+      <span class="badge" id="health-badge">…</span>
+      <button id="demo-btn" class="primary" data-i18n="load_demo">Cargar demo</button>
+      <button data-i18n-toggle id="lang-toggle"></button>
+    </div>
+  </header>
+
+  <main class="admin-grid">
+    <section class="panel">
+      <h2><span data-i18n="new_session">Nueva sesión</span></h2>
+      <form id="create-form" class="form-grid">
+        <label><span data-i18n="name">Nombre</span>
+          <input name="name" required placeholder="Escenario A · Keynote" /></label>
+        <label><span data-i18n="source_type">Fuente</span>
+          <select name="type">
+            <option value="file">file (archivo de audio)</option>
+            <option value="stream">stream (HLS/HTTP/RTMP)</option>
+            <option value="mic">mic (micrófono del navegador)</option>
+          </select></label>
+        <label><span data-i18n="source_path">Archivo o URL</span>
+          <input name="path" placeholder="samples/talk_en.mp3 o https://…/stream.m3u8" /></label>
+        <label><span data-i18n="src_lang">Idioma de entrada</span>
+          <select name="src_lang">
+            <option value="auto">auto</option><option value="es">es</option>
+            <option value="en">en</option><option value="pt">pt</option>
+          </select></label>
+        <label><span data-i18n="engine_pick">Motor</span>
+          <select name="engine">
+            <option value="">auto</option><option value="gemini">gemini</option>
+            <option value="whisper">whisper</option><option value="canned">canned</option>
+          </select></label>
+        <label><span data-i18n="speed">Velocidad</span>
+          <input name="speed" type="number" step="0.1" min="0.1" value="1" /></label>
+        <label class="checks" style="align-self:end">
+          <input type="checkbox" name="loop" /> <span data-i18n="loop">Repetir en loop</span></label>
+        <div class="full">
+          <span style="font-size:0.82rem;color:var(--dim)" data-i18n="outputs">Idiomas de salida</span>
+          <div class="checks" style="margin-top:0.3rem">
+            <label><input type="checkbox" name="out_es" checked /> es</label>
+            <label><input type="checkbox" name="out_en" checked /> en</label>
+            <label><input type="checkbox" name="out_pt" /> pt</label>
+          </div>
+        </div>
+        <label class="full"><span data-i18n="glossary">Glosario</span>
+          <textarea name="glossary" rows="2" data-i18n-ph="glossary_ph"
+            placeholder="Nerdearla, Kubernetes, Grafana…"></textarea></label>
+        <div class="full">
+          <button class="primary" type="submit" data-i18n="create">Crear y transmitir</button>
+          <span class="mini" data-i18n="mic_help"></span>
+        </div>
+      </form>
+    </section>
+
+    <section class="panel">
+      <h2>📡 <span>Sesiones</span> <span class="badge" id="session-count"></span></h2>
+      <table>
+        <thead>
+          <tr>
+            <th data-i18n="session">Sesión</th>
+            <th data-i18n="state">Estado</th>
+            <th data-i18n="engine">Motor</th>
+            <th>⏱ p50 / last</th>
+            <th>💬 <span data-i18n="finals">finales</span></th>
+            <th data-i18n="actions">Acciones</th>
+          </tr>
+        </thead>
+        <tbody id="sessions-body"></tbody>
+      </table>
+      <div class="empty" id="admin-empty" hidden data-i18n="no_sessions"></div>
+    </section>
+  </main>
+
+  <footer>
+    <span>CharlaViva · MIT · <a href="/">👥 audiencia</a></span>
+  </footer>
+
+  <script src="/static/common.js"></script>
+  <script src="/static/admin.js"></script>
+</body>
+</html>

@@ -1,0 +1,79 @@
+{
+  "lang": "es",
+  "duration": 64.6,
+  "note": "Pre-authored captions for the bundled TTS sample (canned engine fallback).",
+  "cues": [
+    {
+      "t0": 0.35,
+      "t1": 3.32,
+      "texts": {
+        "es": "Bienvenidos y bienvenidas a esta charla de Nerdearla.",
+        "en": "Welcome to this talk at Nerdearla."
+      }
+    },
+    {
+      "t0": 3.32,
+      "t1": 9.49,
+      "texts": {
+        "es": "Mi nombre es Marta y hoy vamos a hablar de accesibilidad en conferencias de tecnología.",
+        "en": "My name is Marta and today we are going to talk about accessibility at technology conferences."
+      }
+    },
+    {
+      "t0": 9.49,
+      "t1": 20.17,
+      "texts": {
+        "es": "Empecemos con un dato duro: más de cuatrocientos millones de personas hablan español en el mundo, y sin embargo la mayoría de las charlas técnicas se dictan en inglés.",
+        "en": "Let's start with a hard fact: more than four hundred million people speak Spanish in the world, and yet most technical talks are given in English."
+      }
+    },
+    {
+      "t0": 20.17,
+      "t1": 27.95,
+      "texts": {
+        "es": "La barrera idiomática es real, y en cada evento vemos gente que se pierde contenido valioso por no entenderlo.",
+        "en": "The language barrier is real, and at every event we see people miss valuable content because they don't understand it."
+      }
+    },
+    {
+      "t0": 27.95,
+      "t1": 38.66,
+      "texts": {
+        "es": "Por eso construimos un sistema de subtítulos en vivo: toma el audio del escenario, lo transcribe en el idioma original y lo traduce al español en tiempo real.",
+        "en": "That's why we built a live captioning system: it takes the stage audio, transcribes it in the original language and translates it into Spanish in real time."
+      }
+    },
+    {
+      "t0": 38.66,
+      "t1": 46.03,
+      "texts": {
+        "es": "Usamos modelos abiertos como Whisper y servicios como Gemini para lograr una latencia baja, de menos de dos segundos.",
+        "en": "We use open models like Whisper and services like Gemini to achieve low latency, under two seconds."
+      }
+    },
+    {
+      "t0": 46.03,
+      "t1": 56.61,
+      "texts": {
+        "es": "Lo más importante es que sea software libre, para que cualquier conferencia del mundo pueda desplegarlo: Nerdearla, PyCon, DevFest o el meetup de tu barrio.",
+        "en": "The most important thing is that it is free software, so any conference in the world can deploy it: Nerdearla, PyCon, DevFest or your neighborhood meetup."
+      }
+    },
+    {
+      "t0": 56.61,
+      "t1": 61.45,
+      "texts": {
+        "es": "Si te interesa sumarte, todo el código está en GitHub con licencia MIT.",
+        "en": "If you'd like to join, all the code is on GitHub under the MIT license."
+      }
+    },
+    {
+      "t0": 61.45,
+      "t1": 64.25,
+      "texts": {
+        "es": "¡Muchas gracias y que disfruten el evento!",
+        "en": "Thank you very much and enjoy the event!"
+      }
+    }
+  ]
+}

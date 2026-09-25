@@ -1,0 +1,47 @@
+{
+  "lang": "en",
+  "duration": 41.8,
+  "note": "Pre-authored captions for the bundled TTS sample (canned engine fallback).",
+  "cues": [
+    {
+      "t0": 0.35,
+      "t1": 10.68,
+      "texts": {
+        "en": "Hi everyone! In this short talk we will see why Postgres is still the best default database for most applications.",
+        "es": "¡Hola a todos! En esta charla corta vamos a ver por qué Postgres sigue siendo la mejor base de datos por defecto para la mayoría de las aplicaciones."
+      }
+    },
+    {
+      "t0": 10.68,
+      "t1": 23.1,
+      "texts": {
+        "en": "People keep telling me they need a specialized datastore for every new feature: a time series database, a search engine, a graph database.",
+        "es": "La gente me dice que necesita un almacén de datos especializado para cada función nueva: una base de datos de series de tiempo, un motor de búsqueda, una base de datos de grafos."
+      }
+    },
+    {
+      "t0": 23.1,
+      "t1": 31.04,
+      "texts": {
+        "en": "But modern Postgres gives you all of that: JSON documents, full text search, and powerful indexes.",
+        "es": "Pero el Postgres moderno te da todo eso: documentos JSON, búsqueda de texto completo e índices potentes."
+      }
+    },
+    {
+      "t0": 31.04,
+      "t1": 38.54,
+      "texts": {
+        "en": "Start simple, measure your latency, and only add complexity when you can prove you need it.",
+        "es": "Empezá simple, medí tu latencia, y solo agregá complejidad cuando puedas demostrar que la necesitás."
+      }
+    },
+    {
+      "t0": 38.54,
+      "t1": 41.45,
+      "texts": {
+        "en": "Your future team will thank you.",
+        "es": "Tu equipo del futuro te lo va a agradecer."
+      }
+    }
+  ]
+}
