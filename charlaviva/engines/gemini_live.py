@@ -161,33 +161,52 @@ class GeminiLiveEngine(Engine):
             except Exception:  # older SDK/model without custom_vocabulary
                 transcription = types.AudioTranscriptionConfig()
 
-        kwargs: dict[str, Any] = {
+        base: dict[str, Any] = {
             "response_modalities": ["TEXT"],
             "input_audio_transcription": transcription,
         }
         if self.mode == "caption":
-            kwargs["system_instruction"] = self._system_prompt()
-        try:  # kill latency-inducing deliberation when the model supports it
-            kwargs["thinking_config"] = types.ThinkingConfig(thinking_budget=0)
+            base["system_instruction"] = self._system_prompt()
+
+        # Optional config knobs: tried newest-first, dropped if the SDK/model
+        # rejects them. Compression matters for talks longer than ~15 minutes;
+        # disabling thinking keeps caption latency low.
+        extras: list[dict[str, Any]] = [{}]
+        try:
+            extras.insert(
+                0,
+                {
+                    "thinking_config": types.ThinkingConfig(thinking_budget=0),
+                    "context_window_compression": types.ContextWindowCompressionConfig(
+                        sliding_window=types.SlidingWindow()
+                    ),
+                },
+            )
+            extras.insert(1, {"thinking_config": types.ThinkingConfig(thinking_budget=0)})
         except Exception:
             pass
 
         last_err: Exception | None = None
         for model in self._candidates():
-            try:
-                config = types.LiveConnectConfig(**kwargs)
-            except Exception:
-                kwargs.pop("thinking_config", None)
-                config = types.LiveConnectConfig(**kwargs)
-            try:
-                self._ctx = client.aio.live.connect(model=model, config=config)
-                self._session = await self._ctx.__aenter__()
-                self._model_used = model
+            for extra in extras:
+                try:
+                    config = types.LiveConnectConfig(**{**base, **extra})
+                except Exception:
+                    continue  # this SDK doesn't know these fields
+                try:
+                    self._ctx = client.aio.live.connect(model=model, config=config)
+                    self._session = await self._ctx.__aenter__()
+                    self._model_used = model
+                    break
+                except Exception as err:  # unknown model / quota / auth / bad config
+                    last_err = err
+                    log.warning(
+                        "gemini live connect failed for %s (extras=%s): %s",
+                        model, list(extra), err,
+                    )
+                    self._ctx = self._session = None
+            if self._session is not None:
                 break
-            except Exception as err:  # unknown model / quota / auth
-                last_err = err
-                log.warning("gemini live connect failed for %s: %s", model, err)
-                self._ctx = self._session = None
         if self._session is None:
             raise RuntimeError(f"could not open a Gemini Live session: {last_err}")
 

@@ -6,12 +6,11 @@ charla** y entienda cómo se usa, en menos de dos minutos.
 ## Preparación (5 minutos antes de grabar)
 
 1. `pip install -r requirements.txt && python -m charlaviva doctor`
-2. Bajá una charla real de Nerdearla (YouTube):
-   `./scripts/fetch_talk.sh "https://www.youtube.com/watch?v=…"`
-3. `python -m charlaviva serve` y desde `/admin` creá **2 sesiones**:
-   - `Keynote (EN)` → el audio recién descargado, `src_lang: en`, salidas `es, en`
-   - `Charla (ES)` → `samples/talk_es.mp3` en loop, `src_lang: es`, salidas `es, en`
-4. Dejá abiertos: una pestaña en `/` (audiencia), `/admin`, y OBS con el overlay.
+2. La forma más rápida: **`./scripts/demo_real_talks.sh`** — baja el audio de 3
+   charlas reales de Nerdearla (YouTube), levanta CharlaViva con Gemini Live y
+   crea una sesión por charla. Necesitás `export GEMINI_API_KEY=…`.
+   (Manual: `./scripts/fetch_talk.sh "<url>"` y creá las sesiones en `/admin`.)
+3. Dejá abiertos: una pestaña en `/` (audiencia), `/admin`, y OBS con el overlay.
 
 ## Guion sugerido (90 s)
 

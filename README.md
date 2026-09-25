@@ -34,7 +34,14 @@ python -m charlaviva demo          # ← 2 escenarios de muestra, ya transmitien
 
 Abrí **http://localhost:8000** (audiencia), **/admin** (producción) o **/overlay** (OBS). Listo: hay subtítulos EN→ES y ES→EN corriendo en dos sesiones en paralelo sobre los audios de prueba incluidos en [`samples/`](samples/README.md).
 
-Después probá con **audio real de una charla de Nerdearla**:
+Después probá con **audio real de una charla de Nerdearla** — un solo comando baja 3 charlas de prueba, levanta el servidor con Gemini y crea una sesión por charla:
+
+```bash
+export GEMINI_API_KEY="tu-key"          # https://aistudio.google.com/apikey
+./scripts/demo_real_talks.sh            # → http://localhost:8000 (3 charlas en vivo)
+```
+
+O a mano, charla por charla:
 
 ```bash
 ./scripts/fetch_talk.sh "https://www.youtube.com/watch?v=ID_DE_CHARLA"

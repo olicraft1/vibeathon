@@ -66,6 +66,19 @@ def _doctor(args: argparse.Namespace) -> int:
         "only needed for the gemini engine / EN→ES translation",
         required=False,
     )
+    if settings.gemini_api_key:
+        try:
+            import httpx
+
+            httpx.head("https://generativelanguage.googleapis.com", timeout=8)
+            check("Gemini API reachable", True, "", required=False)
+        except Exception as err:
+            check(
+                "Gemini API reachable",
+                False,
+                f"red/firewall bloqueando googleapis ({type(err).__name__}) — probá desde otra red",
+                required=False,
+            )
     check(
         "sample talks present",
         (SAMPLES_DIR / "talk_en.mp3").exists() and (SAMPLES_DIR / "talk_es.mp3").exists(),
